@@ -1,2 +1,2 @@
-include ':ats-apply-service', ':prefill-service', ':rest-assured'
+include ':ats-apply-service', ':prefill-service', ':candidate-profile-service', ':rest-assured'
 

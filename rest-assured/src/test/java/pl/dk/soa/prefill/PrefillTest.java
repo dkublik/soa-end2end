@@ -1,11 +1,11 @@
-package pl.dk.soa;
-
+package pl.dk.soa.prefill;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
+import pl.dk.soa.Hosts;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
