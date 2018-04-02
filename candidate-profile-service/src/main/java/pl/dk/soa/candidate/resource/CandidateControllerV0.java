@@ -2,12 +2,14 @@ package pl.dk.soa.candidate.resource;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.dk.soa.candidate.service.CandidatePersonalDetails;
 import pl.dk.soa.candidate.service.CandidateService;
 
-import java.util.List;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -26,16 +28,20 @@ class CandidateControllerV0 {
     @GetMapping
     @ApiOperation(value = "get all candidates data")
     @SuppressWarnings("unchecked")
-    List<CandidatePersonalDetails> getCandidates() {
-        return candidateService.getCandidates();
+    CandidatePersonalDetailsCollection getCandidates() {
+        return new CandidatePersonalDetailsCollection(candidateService.getCandidates());
     }
 
     @GetMapping("{candidateId}")
     @ApiOperation(value = "get candidate data")
     @SuppressWarnings("unchecked")
-    ResponseEntity<CandidatePersonalDetails> getCandidate(@PathVariable String candidateId) {
+    ResponseEntity<CandidatePersonalDetails> getCandidate(@PathVariable String candidateId, HttpServletResponse httResponse) throws InterruptedException {
+        httResponse.addCookie(new Cookie("trackingCallTime", System.currentTimeMillis() + ""));
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("cookie-tracking-mode", "on");
+        Thread.sleep(500);
         return candidateService.getCandidate(candidateId)
-                .map(data -> new ResponseEntity(data, OK))
+                .map(data -> new ResponseEntity(data, headers, OK))
                 .orElse(new ResponseEntity(NOT_FOUND));
     }
 }
