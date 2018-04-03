@@ -23,7 +23,7 @@ class CandidatesDemoData {
                         "d:\\ulubione\\britney.jpg", "singer and dancer", new CandidateAddress("Poland", "Bydgoszcz", "Czerwonego Kapturka 22/13", "82-110")));
         candidateService.addCandidate(
                 new CandidatePersonalDetails("mrpresident", "Barack", "Obama", "mrPresident@wp.pl", "+48 111 111 113",
-                        "d:\\ulubione\\mrpresident.jpg", "jedi master", new CandidateAddress("Poland", "Warsaw", "Plac Bankowy 12", "11-023")));
+                        "d:\\ulubione\\mrpresident.jpg", "retired", new CandidateAddress("Poland", "Warsaw", "Plac Bankowy 12", "11-023")));
     }
 
 }

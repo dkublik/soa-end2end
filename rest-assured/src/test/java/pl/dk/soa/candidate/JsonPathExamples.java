@@ -26,6 +26,19 @@ class JsonPathExamples {
     }
 
     @Test
+    void propertiesByDotReverse() {
+        // when
+        Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
+
+        // then
+        response.then()
+                .statusCode(HttpStatus.OK.value())
+                .contentType(ContentType.JSON)
+                .body("candidates[-1].login", is("mrpresident"))
+                .body("candidates[-1].address.country", is("Poland"));
+    }
+
+    @Test
     void find() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
