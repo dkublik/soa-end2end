@@ -1,7 +1,9 @@
 package pl.dk.soa.candidate;
 
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
@@ -75,6 +77,16 @@ class JsonPathExamples {
                 .contentType(ContentType.JSON)
                 .body("candidates.size()", is(3))
                 .body("candidates.login.collect { it.length() }.sum()", is(30));
+    }
+
+    @Test
+    void extractingJsonPathObject() {
+        // when
+        Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
+
+        // then
+        int size = JsonPath.from(response.asString()).getInt("candidates.size()");
+        Assert.assertEquals(3, size);
     }
 
 }
