@@ -10,6 +10,7 @@ dependencies {
 	compile('io.springfox:springfox-swagger2')
 	compile('io.springfox:springfox-swagger-ui')
     compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-security')
 
     testCompile('io.rest-assured:rest-assured')
 }
