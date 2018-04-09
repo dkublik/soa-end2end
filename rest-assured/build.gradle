@@ -25,6 +25,8 @@ dependencies {
     testCompile('org.mockito:mockito-core')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.github.tomakehurst:wiremock-standalone')
+    testCompile('com.atlassian.oai:swagger-request-validator-restassured')
+    testCompile('com.atlassian.oai:swagger-request-validator-wiremock')
 
     testRuntime('org.junit.jupiter:junit-jupiter-engine')
 }
