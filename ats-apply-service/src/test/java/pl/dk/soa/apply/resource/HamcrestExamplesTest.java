@@ -1,7 +1,7 @@
 package pl.dk.soa.apply.resource;
 
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 
@@ -15,10 +15,10 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;
 import static org.junit.Assert.assertThat;
 
-class HamcrestExamplesTest {
+public class HamcrestExamplesTest {
 
     @Test
-    void beanProperties() {
+    public void beanProperties() {
         Application application = new Application();
         application.setCandidateId("jSnow");
         application.setListingId("123");
@@ -40,7 +40,7 @@ class HamcrestExamplesTest {
     }
 
     @Test
-    void collections() {
+    public void collections() {
         List<Integer> list = asList(9, 12, 31, 42, 8, 4);
 
         assertThat(list, hasSize(6));

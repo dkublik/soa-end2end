@@ -1,16 +1,16 @@
 package pl.dk.soa.apply.resource;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import pl.dk.soa.apply.store.StoredApplication;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
-class ApplicationConverterTest {
+public class ApplicationConverterTest {
 
     ApplicationConverter applicationConverter = new ApplicationConverter();
 
     @Test
-    void shouldConvertApplication_Gen1() {
+    public void shouldConvertApplication_Gen1() {
         // given
         Application application = new Application();
         application.setCandidateId("jSnow");

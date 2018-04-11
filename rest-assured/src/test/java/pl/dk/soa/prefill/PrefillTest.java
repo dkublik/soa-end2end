@@ -3,7 +3,7 @@ package pl.dk.soa.prefill;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import pl.dk.soa.Hosts;
 
@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.is;
 class PrefillTest {
 
     @Test
-    void shouldGetDataForPrefill() {
+    public void shouldGetDataForPrefill() {
         // given
         RequestSpecification requestSpecification = given().pathParam("candidateId", "mHamill");
 

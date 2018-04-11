@@ -4,7 +4,7 @@ import com.atlassian.oai.validator.restassured.SwaggerValidationFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.http.HttpStatus;
 
 import static io.restassured.RestAssured.given;

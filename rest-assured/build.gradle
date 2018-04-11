@@ -16,11 +16,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-activemq')
 	compile('io.springfox:springfox-swagger2')
 	compile('io.springfox:springfox-swagger-ui')
-    compile('org.projectlombok:lombok')
     compile('com.fasterxml.jackson.core:jackson-databind')
     compile('org.apache.activemq:activemq-kahadb-store')
 
-    testCompile('org.junit.jupiter:junit-jupiter-api')
+    testCompile('junit:junit')
     testCompile('io.rest-assured:rest-assured')
     testCompile('org.mockito:mockito-core')
     testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -29,5 +28,4 @@ dependencies {
     testCompile('com.atlassian.oai:swagger-request-validator-wiremock')
     testCompile('io.codearte.jfairy:jfairy')
 
-    testRuntime('org.junit.jupiter:junit-jupiter-engine')
 }

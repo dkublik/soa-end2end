@@ -1,8 +1,9 @@
 package pl.dk.soa.candidate;
 
-import org.junit.jupiter.api.Test;
 
-class CandidateTest {
+import org.junit.Test;
+
+public class CandidateTest {
 
     @Test
     void shouldGetProfileDetails() {

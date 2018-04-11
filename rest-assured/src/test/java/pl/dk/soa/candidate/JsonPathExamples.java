@@ -4,7 +4,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.http.HttpStatus;
 
 import static io.restassured.RestAssured.when;
@@ -12,10 +12,10 @@ import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
 import static pl.dk.soa.Hosts.CANDIDATE_HOST;
 
-class JsonPathExamples {
+public class JsonPathExamples {
 
     @Test
-    void propertiesByDot() {
+    public void propertiesByDot() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
@@ -28,7 +28,7 @@ class JsonPathExamples {
     }
 
     @Test
-    void propertiesByDotReverse() {
+    public void propertiesByDotReverse() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
@@ -41,7 +41,7 @@ class JsonPathExamples {
     }
 
     @Test
-    void find() {
+    public void find() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
@@ -55,7 +55,7 @@ class JsonPathExamples {
     }
 
     @Test
-    void min() {
+    public void min() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
@@ -67,7 +67,7 @@ class JsonPathExamples {
     }
 
     @Test
-    void aggregates() {
+    public void aggregates() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
@@ -80,7 +80,7 @@ class JsonPathExamples {
     }
 
     @Test
-    void extractingJsonPathObject() {
+    public void extractingJsonPathObject() {
         // when
         Response response = when().get(CANDIDATE_HOST + "/v0/candidates/profile");
 
