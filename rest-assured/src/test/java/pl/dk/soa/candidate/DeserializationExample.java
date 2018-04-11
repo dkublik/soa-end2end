@@ -9,16 +9,15 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.http.HttpStatus;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static pl.dk.soa.Hosts.CANDIDATE_HOST;
 
-class DeserializationExample {
+public class DeserializationExample {
 
     @Test
-    void shouldGetProfileDetails() {
+    public void shouldGetProfileDetails() {
         // given
         // to ignore address filed that we don't care about
         RestAssured.config = RestAssuredConfig.config().objectMapperConfig(
@@ -33,7 +32,7 @@ class DeserializationExample {
 
         // then
         response.then()
-                .statusCode(HttpStatus.OK.value());
+                .statusCode(200);
         CandidatePersonalDetails candidatePersonalDetails = response.as(CandidatePersonalDetails.class);
         Assert.assertThat(candidatePersonalDetails.getLogin(), is("mhamill"));
     }

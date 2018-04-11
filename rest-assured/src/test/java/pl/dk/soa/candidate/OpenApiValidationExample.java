@@ -5,18 +5,17 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Test;
-import org.springframework.http.HttpStatus;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static pl.dk.soa.Hosts.CANDIDATE_HOST;
 
-class OpenApiValidationExample {
+public class OpenApiValidationExample {
 
     SwaggerValidationFilter validationFilter = new SwaggerValidationFilter("candidate-swagger-v1.yaml");
 
     @Test
-    void shouldValidateAgainstOpenApiSpecification() {
+    public void shouldValidateAgainstOpenApiSpecification() {
         // given:
         RequestSpecification request = given()
                 .filter(validationFilter);
@@ -27,7 +26,7 @@ class OpenApiValidationExample {
 
         // then
         response.then()
-                .statusCode(HttpStatus.OK.value())
+                .statusCode(200)
                 .contentType(ContentType.JSON)
                 .body("login", is("mhamill"));
     }

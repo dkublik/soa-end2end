@@ -22,7 +22,7 @@ public class ApplicationConverterTest {
 
         // then
         assertTrue(storedApplication.getId() != null);
-        assertTrue(storedApplication.getCandidateId() == "jSnow1");
+        assertTrue(storedApplication.getCandidateId() == "jSnow");
         assertTrue(storedApplication.getListingId() == "123");
         assertTrue(storedApplication.getMessageToRecruiter() == "eager to work for the whole winter!");
     }

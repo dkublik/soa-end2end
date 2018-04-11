@@ -1,12 +1,11 @@
 package pl.dk.soa.candidate;
 
-
 import org.junit.Test;
 
 public class CandidateTest {
 
     @Test
-    void shouldGetProfileDetails() {
+    public void shouldGetProfileDetails() {
         // given / when
         // test zasobu: GET http://localhost:8082/v0/candidates/profile/{candidateId}
         // testowany uzytkownik mHamill
