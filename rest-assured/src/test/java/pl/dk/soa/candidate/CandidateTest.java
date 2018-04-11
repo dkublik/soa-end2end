@@ -1,14 +1,6 @@
 package pl.dk.soa.candidate;
 
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.HttpStatus;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
-import static pl.dk.soa.Hosts.CANDIDATE_HOST;
 
 class CandidateTest {
 

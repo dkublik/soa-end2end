@@ -1,11 +1,11 @@
 package pl.dk.soa.apply.domainevent;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.springframework.context.ApplicationEventPublisher;
 
-@Slf4j
 public final class DomainEvents {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(DomainEvents.class);
     private static ApplicationEventPublisher applicationEventPublisher;
 
     private DomainEvents() {

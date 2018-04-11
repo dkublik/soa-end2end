@@ -2,7 +2,10 @@ package pl.dk.soa.apply.store;
 
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Comparator.comparing;
 
